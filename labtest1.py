@@ -53,7 +53,7 @@ count = len(x.split())
 print(count, " words")
 
 
-# In[102]:
+# In[122]:
 
 
 def multiply_by_two(x):
@@ -62,8 +62,8 @@ def multiply_by_two(x):
 def add_numbers(a, b):
     return a + b
 
-def print_arguments(*args):
-    print(f'Arguments are: {args}')
+def print_arguments(args):
+    print(f'Arguments are:{args}')
     
 augmented_multiply_by_two = print_arguments(multiply_by_two(10))
 
@@ -76,23 +76,28 @@ x = augmented_add_numbers
  # this will print: Arguments are: (3, 4), {} and will return 7.                                           
 
 
-# In[101]:
+# In[120]:
 
 
-def multiply_output(*args):
-    print(f'Arguments are: {args}')
-    
 def multiply_by_three(x):
-    return x * 3
+    return x*3
 
-augmented_multiply_by_three = multiply_output(multiply_by_three(2*10))
-x = augmented_multiply_by_three
+def multiply_output(ambt):
+    return 2*ambt
+
+def print_arguments(args):
+    print (f'Arguments are:{args}')
+    
+augmented_multiply_by_three = (multiply_by_three(10))
+x=augmented_multiply_by_three
+augmented_output=print_arguments(multiply_output(x))
+ambt=augmented_output
 
 
-# In[109]:
+# In[121]:
 
 
-def augment_function(*args):
+def augment_function(args):
     print(f'Arguments are: {args}')
     
 def multiply_by_two(x):
