@@ -1,25 +1,25 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[34]:
+# In[115]:
 
 
 number=int(input("what is the number?"))
-    binarynumber=""
-    if (number!=0):
-        while (number>=1):
-            if (number %2==0):
-                binarynumber=binarynumber+"0"
-                number=number/2
-            else:
-                binarynumber=binarynumber+"1"
-                number=(number-1)/2
+binarynumber=""
+if (number!=0):
+    while (number>=1):
+        if (number %2==0):
+            binarynumber=binarynumber+"0"
+            number=number/2
+        else:
+            binarynumber=binarynumber+"1"
+            number=(number-1)/2
 
-    else:
-        binarynumber="0"
+else:
+    binarynumber="0"
 
-    i= "".join(reversed(binarynumber))
-    print("There are "+str(i.count('1'))+"'1' in "+i)
+i= "".join(reversed(binarynumber))
+print("There are "+str(i.count('1'))+"'1' in "+i)
 
 
 # In[90]:
@@ -89,10 +89,10 @@ augmented_multiply_by_three = multiply_output(multiply_by_three(2*10))
 x = augmented_multiply_by_three
 
 
-# In[105]:
+# In[109]:
 
 
-def augment_function(function, decorators):
+def augment_function(*args):
     print(f'Arguments are: {args}')
     
 def multiply_by_two(x):
@@ -101,9 +101,9 @@ def multiply_by_two(x):
 def add_numbers(a, b):
     return a + b
 
-decorated_function = augment_function(add_numbers, [print_arguments, multiply_output]) 
+decorated_function = augment_function(multiply_by_two(add_numbers(3, 4))) 
 
-x = decorated_function(3, 4)
+x = decorated_function
     
 
 
